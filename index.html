@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Calculadora | Gongh95</title>
+</head>
+
+<body>
+
+    <div class="calc-container" id="calculadora">
+        <div class="calc-header" id="header"></div>
+        <div class="calc-display" id="display">
+            <p id="display-resultado"></p>
+            <!-- <input type="number" readonly="readonly" placeholder="0" name="numero" id="display-resultado"> -->
+        </div>
+        <div class="calc-botonera" id="botonera">
+            <div class="calc-btn" onclick="limpiar()" id="limpiar">CE</div>
+            <div class="calc-btn" onclick="limpiarTodo()" id="limpiar-todo">C</div>
+            <div class="calc-btn" onclick="borrar()" id="borrar">BS</div>
+            <div class="calc-btn" onclick="dividir()" id="dividir">÷</div>
+            <div class="calc-btn" onclick="numero('7')" id="7">7</div>
+            <div class="calc-btn" onclick="numero('8')" id="8">8</div>
+            <div class="calc-btn" onclick="numero('9')" id="9">9</div>
+            <div class="calc-btn" onclick="multiplicar()" id="multiplicar">X</div>
+            <div class="calc-btn" onclick="numero('4')" id="4">4</div>
+            <div class="calc-btn" onclick="numero('5')" id="5">5</div>
+            <div class="calc-btn" onclick="numero('6')" id="6">6</div>
+            <div class="calc-btn" onclick="restar()" id="restar">-</div>
+            <div class="calc-btn" onclick="numero('3')" id="3">3</div>
+            <div class="calc-btn" onclick="numero('2')" id="2">2</div>
+            <div class="calc-btn" onclick="numero('1')" id="1">1</div>
+            <div class="calc-btn" onclick="sumar()" id="sumar">+</div>
+            <div class="calc-btn" onclick="masMenos()" id="mas-menos">±</div>
+            <div class="calc-btn" onclick="numero('0')" id="0">0</div>
+            <div class="calc-btn" onclick="coma()" id="coma">,</div>
+            <div class="calc-btn" onclick="igual()" id="igual">=</div>
+        </div>
+    </div>
+    <script>
+        // const displayResultado = document.getElementById("display-resultado");
+
+        // const limpiarTodo = document.getElementById("limpiar-todo");
+        // const limpiar = document.getElementById("limpiar");
+        // const borrar = document.getElementById("borrar");
+        // const dividir = document.getElementById("dividir");
+        const siete = document.getElementById("7");
+        const ocho = document.getElementById("8");
+        const nueve = document.getElementById("9");
+        // const multiplicar = document.getElementById("multiplicar");
+        const cuatro = document.getElementById("4");
+        const cinco = document.getElementById("5");
+        const seis = document.getElementById("6");
+        // const restar = document.getElementById("restar");
+        const tres = document.getElementById("3");
+        const dos = document.getElementById("2");
+        const uno = document.getElementById("1");
+        // const sumar = document.getElementById("sumar");
+        // const masMenos = document.getElementById("mas-menos");
+        const cero = document.getElementById("0");
+        // const coma = document.getElementById("coma");
+        // const igual = document.getElementById("igual");
+
+
+
+
+        window.onload = function () { //Acciones tras cargar la página
+            displayResultado = document.getElementById("display-resultado"); //elemento pantalla de salida
+            displayResultado.innerHTML="0";
+        }
+        x = "0"; //guardar número en pantalla
+        xi = 1; //iniciar número en pantalla: 1=si; 0=no;
+        coma = 0; //estado coma decimal 0=no, 1=si;
+
+        function numero(xx) {  //recoge el número pulsado en el argumento.
+         if (x=="0" || xi==1  ) {  // inicializar un número, 
+            displayResultado.innerHTML=xx; //mostrar en pantalla
+            x=xx; //guardar número;
+            }
+         else { //continuar un número
+            displayResultado.innerHTML+=xx; //añadimos y mostramos en pantalla.
+            x+=xx; //añadimos y guardamos
+            }
+         xi=0 //el número está iniciado y podemos ampliarlo.
+         }		
+
+    </script>
+</body>
+
+</html>
